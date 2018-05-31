@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { InvoicesComponent } from './invoices/invoices.component';
+import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
 
 const appRoutes: Routes = [
   {
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     LoginComponent,
     RegisterComponent,
-    InvoicesComponent
+    InvoicesComponent,
+    InvoiceCardComponent
   ],
   imports: [
     BrowserModule,
