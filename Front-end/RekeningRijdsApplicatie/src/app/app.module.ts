@@ -12,6 +12,7 @@ import { InvoicesComponent } from './invoices/invoices.component';
 import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
+import { JourneyModalComponent } from './journey-modal/journey-modal.component';
 
 const appRoutes: Routes = [
   {
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     InvoicesComponent,
     InvoiceCardComponent,
     VehiclesComponent,
-    VehicleCardComponent
+    VehicleCardComponent,
+    JourneyModalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    JourneyModalComponent
+  ]
 })
 export class AppModule {
 }
