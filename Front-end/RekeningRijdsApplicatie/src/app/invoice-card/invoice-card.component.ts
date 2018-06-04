@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SubInvoice} from '../sub-invoice';
 
 @Component({
   selector: 'app-invoice-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice-card.component.css']
 })
 export class InvoiceCardComponent implements OnInit {
+
+  @Input() invoice: SubInvoice;
 
   constructor() { }
 
