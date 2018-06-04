@@ -1,12 +1,22 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
+  <h4 class="modal-title">Journeys</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <p>Hello, {{invoice.invoiceNumber}}!</p>
+  <div *ngFor="let journey of journeys">
+    <h5>Journey id: {{journey.id}}</h5>
+    <ul *ngFor="let translocation of journey.translocations">
+      <li>Serial: {{translocation.serialNumber}} <br/>
+        Lat: {{translocation.lat}} <br/>
+        Lon: {{translocation.long}} <br/>
+        Date: {{translocation.dateTime}} <br/>
+        Country: {{translocation.countryCode}}</li>
+    </ul>
+  </div>
 </div>
 <div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark">Pay</button>
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
 </div>

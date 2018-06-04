@@ -20,6 +20,6 @@ export class InvoiceCardComponent implements OnInit {
 
   open() {
     const modalRef = this.modalService.open(JourneyModalComponent);
-    modalRef.componentInstance.invoice = this.invoice;
+    modalRef.componentInstance.journeysUrl = this.invoice.journeysUri;
   }
 }

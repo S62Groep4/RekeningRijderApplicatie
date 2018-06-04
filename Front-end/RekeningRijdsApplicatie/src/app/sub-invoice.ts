@@ -4,6 +4,7 @@ export class SubInvoice {
   paymentStatus: String;
   invoiceData: String;
   price: String;
+  journeysUri: String;
 
   constructor() {
   }
