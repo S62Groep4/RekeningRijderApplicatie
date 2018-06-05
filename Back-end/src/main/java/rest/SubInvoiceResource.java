@@ -33,14 +33,14 @@ public class SubInvoiceResource {
     SubInvoiceService subInvoiceService;
     
     @GET
-    @Path("{invoiceNumber}")
+    @Path("/invoice/{invoiceNumber}")
     public Response getSubInvoice(@PathParam("invoiceNumber") String invoiceNumber) {
         SubInvoiceDTO dto = DomainToDto.SUBINVOICESTODTOS(subInvoiceService.getSubInvoice(invoiceNumber));
         return Response.ok(dto).build();
     }
     
     @GET
-    @Path("{hashedLicenseplate}")
+    @Path("/licenseplate/{hashedLicenseplate}")
     public Response getSubInvoicesForVehicle(@PathParam("hashedLicenseplate") String hashedLicenseplate){
         List<SubInvoiceDTO> dtos = DomainToDto.SUBINVOICESTODTOS(subInvoiceService.getAllSubInvoices(hashedLicenseplate));
         return Response.ok(dtos).build();
