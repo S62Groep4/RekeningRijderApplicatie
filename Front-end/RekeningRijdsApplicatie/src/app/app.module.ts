@@ -13,6 +13,8 @@ import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
 import { JourneyModalComponent } from './journey-modal/journey-modal.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -57,6 +59,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AppModule} from './app.module';
+import {User} from './user';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: AppModule
@@ -14,13 +16,33 @@ export class AuthService {
     })
   };
 
+  jwtHelper = new JwtHelperService();
+
   constructor(private http: HttpClient) {
   }
 
-  public login(username: string, password: string): Observable<any> {
-    // const user = new User(username, password);
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    const token = this.getToken();
+    return this.jwtHelper.decodeToken(token);
+  }
+
+  public getLoggedInUsername(): string {
+    const token = this.getToken();
+    return this.jwtHelper.decodeToken(token).sub;
+  }
+
+  public login(email: String, password: String): Observable<any> {
+    const user = new User(email, password);
     return this
       .http
-      .post('url', null, {headers: this.httpOptions.headers, observe: 'response'});
+      .post('url', user, {headers: this.httpOptions.headers, observe: 'response'});
+  }
+
+  public logout(): void {
+    localStorage.removeItem('token');
   }
 }
