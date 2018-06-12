@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.authService.login(this.user.email, this.user.password).subscribe(res => {
       localStorage.setItem('token', res.headers.get('Authorization'));
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }, err => {
       if (err.status === 401) {
         this.error = 'Email or password incorrect';

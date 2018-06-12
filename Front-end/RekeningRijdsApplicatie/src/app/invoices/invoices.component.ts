@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SubInvoice} from '../sub-invoice';
 import {ActivatedRoute} from '@angular/router';
+import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'app-invoices',
@@ -12,7 +13,7 @@ export class InvoicesComponent implements OnInit {
   invoices: SubInvoice[] = [];
   hashedLicensePlate: String;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private vehicleService : VehicleService) {
     this.route.params.subscribe(params => {
       this.hashedLicensePlate = params.id;
     });
@@ -29,5 +30,6 @@ export class InvoicesComponent implements OnInit {
     invoice.invoiceData = 'Idk';
     this.invoices.push(invoice);
   }
+
 
 }

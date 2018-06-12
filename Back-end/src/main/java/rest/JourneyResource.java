@@ -65,4 +65,9 @@ public class JourneyResource {
         List<JourneyDTO> dto = DomainToDto.JOURNEYSTODTOS(journeyService.getAllJourneys());
         return Response.ok(dto).build();
     }
+
+    public Response getJourneysPerInvoice(@PathParam("invoiceId") String invoiceId) {
+        List<JourneyDTO> dto = DomainToDto.JOURNEYSTODTOS(journeyService.getJourneysFromInvoice(invoiceId));
+        return Response.ok(dto).build();
+    }
 }
