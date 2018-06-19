@@ -1,4 +1,4 @@
 <h1>Invoices</h1>
-<app-invoice-card></app-invoice-card>
-<app-invoice-card></app-invoice-card>
-<app-invoice-card></app-invoice-card>
+<div *ngFor="let invoice of invoices">
+  <app-invoice-card [invoice]="invoice"></app-invoice-card>
+</div>

@@ -1,11 +1,11 @@
 <form>
   <div class="form-group">
     <label for="inputEmail">Email address</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="example@domain.com">
+    <input type="email" class="form-control" id="inputEmail" placeholder="example@domain.com" [(ngModel)]="user.email" name="email">
   </div>
   <div class="form-group">
     <label for="inputPassword">Password</label>
-    <input type="password" class="form-control" id="inputPassword" placeholder="password">
+    <input type="password" class="form-control" id="inputPassword" placeholder="password" [(ngModel)]="user.password" name="password">
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>

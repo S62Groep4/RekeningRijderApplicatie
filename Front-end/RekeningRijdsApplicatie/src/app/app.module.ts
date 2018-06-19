@@ -10,6 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehicleCardComponent } from './vehicle-card/vehicle-card.component';
+import { JourneyModalComponent } from './journey-modal/journey-modal.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -17,8 +22,12 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'invoices',
+    path: 'invoices/:id',
     component: InvoicesComponent
+  },
+  {
+    path: 'vehicles',
+    component: VehiclesComponent
   },
   {
     path: 'login',
@@ -43,15 +52,23 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     InvoicesComponent,
-    InvoiceCardComponent
+    InvoiceCardComponent,
+    VehiclesComponent,
+    VehicleCardComponent,
+    JourneyModalComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    JourneyModalComponent
+  ]
 })
 export class AppModule {
 }

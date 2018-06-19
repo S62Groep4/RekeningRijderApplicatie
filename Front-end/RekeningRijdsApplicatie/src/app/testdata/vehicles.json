@@ -1,0 +1,17 @@
+[
+  {
+    "hashedLicensePlate": "1",
+    "journeyUri": "http://localhost:8080/api/journeys/1",
+    "subVoiceUri": "http://localhost:8080/api/subvoices/1"
+  },
+  {
+    "hashedLicensePlate": "2",
+    "journeyUri": "http://localhost:8080/api/journeys/2",
+    "subVoiceUri": "http://localhost:8080/api/subvoices/2"
+  },
+  {
+    "hashedLicensePlate": "3",
+    "journeyUri": "http://localhost:8080/api/journeys/3",
+    "subVoiceUri": "http://localhost:8080/api/subvoices/3"
+  }
+]

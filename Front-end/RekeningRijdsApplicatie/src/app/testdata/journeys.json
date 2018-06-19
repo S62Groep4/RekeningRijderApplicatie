@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "translocationUri": "http://localhost:8080/api/translocations/1"
+  },
+  {
+    "id": 2,
+    "translocationUri": "http://localhost:8080/api/translocations/2"
+  },
+  {
+    "id": 3,
+    "translocationUri": "http://localhost:8080/api/translocations/3"
+  }
+]

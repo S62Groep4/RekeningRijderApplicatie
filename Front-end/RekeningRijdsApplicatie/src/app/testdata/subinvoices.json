@@ -1,0 +1,9 @@
+[
+  {
+    "invoiceNumber": 1,
+    "country": "DE",
+    "paymentStatus": "Unpaid",
+    "invoiceDate": "19:41 04/06/2018",
+    "price": "12.50"
+  }
+]
